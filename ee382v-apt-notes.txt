@@ -1,0 +1,35 @@
+Python is good for web service development.
+Guava: Google Core Libraries for Java
+Jenkins: open-source continuous integration server built with Java, which provides plugins to support building and testing virtually any project.
+Keyboard shortcuts for gmail
+AUTOCONF ./config
+
+JSON file format
+Protocol Buffer: a method of serializing structured data.
+What server provides: 
+	[1]Container APIs for low level processing (e.g. routing/serializing requests)
+	[2]Language which supports convenient text processing, quick development, etc. (e.g. Java/Python/Node.js)
+Node.js: 
+	[1]open source, cross-platform runtime environment for server-side and networking applications written in JavaScript.
+	[2]event-driven architecture and a non-blocking I/O API that optimizes an application's throughput and scalability. 
+Postman: HTTP Request composer
+Python debugger is not suitable for server application debugging due to concurrency issues. Instead logging info should be used.
+Java: Difference between ".=" operator and "==" operator
+Python: raw_input([arg]), presents a prompt to the user, gets input from the user and returns the data input by the user in a string.
+Python: xrange vs. range
+Python: s[:n] + s[n:] == s
+Python: s[i:i] empty string, s[:] whole string
+Python string is immutable, semantically-mutable function on string will return a new string
+Python list is mutable
+Python: * operator on list
+Python: b = a, assign reference vs. b = a[:], assign copy
+Python dictionary key is immutable, key must implement hash function
+Python tuple is immutable, could be used as dictionary key
+Python: single element tuple: ('a',)
+Anatomy on an app:
+Client										 Server
+Web Page(UI widget, HTML)		<------>	services	<------> Database(DB) (meta data)
+Mobile App(Android UI widget)	<------>				<------> File System(FS) (raw data)
+														<------> Suggestion Service (cron job, running machine learning algorithms)
+
+
