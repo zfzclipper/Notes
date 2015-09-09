@@ -54,13 +54,24 @@ Development Flow
 configuration file elements:
 - runtime: App Engine runtime environment name
 - api_version: API version in the given runtime environment used by this application
-- handlers: A list of URL patterns and descriptions of how they should be handled
+- handlers: list of URL patterns and descriptions of how they should be handled
 	- script handlers: 
 		- Executes a Python script to handle the request that matches the URL pattern.
 		- The mapping defines a URL pattern to match, and the script to be executed.
 	- static file handlers:
 		- Static files are files to be served directly to the user for a given URL (e.g. images, CSS stylesheets, JavaScript source files, etc.)
 		- Static file handlers describe which files in the application directory are static files, and which URLs serve them.
+ - threadsafe: configures your application to use concurrent requests. 
+
+handler script
+- RequestHandler classes: process requests and build responses
+- WSGIApplication instance: represent application itself, and route incoming requests to handlers based on the URL
+
+Web Server Gateway Interface (WSGI): interface between web servers and web applications/frameworks for Python 
+Web Application Framework
+Google App Engine Service
+ - Users service:  lets your application integrate with Google user accounts. 
+	- Users API
 
 Requisites:
 [1]Google App Engine SDK
