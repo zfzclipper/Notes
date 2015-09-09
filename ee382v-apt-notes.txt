@@ -42,6 +42,26 @@ App Engine application
 	- Templating language for Python: Jinja2
 	- Upload app to App Engine
 
+Development Flow
+[1]Create a directory. 
+	- All files for this application reside in this directory.
+		- python script(.py): defines request handler
+		- configuration file(app.yaml): 
+			- specifies how URL paths correspond to request handlers and static files.
+			- contains information about the application code.
+			- must be located in your application's root directory.
+
+configuration file elements:
+- runtime: App Engine runtime environment name
+- api_version: API version in the given runtime environment used by this application
+- handlers: A list of URL patterns and descriptions of how they should be handled
+	- script handlers: 
+		- Executes a Python script to handle the request that matches the URL pattern.
+		- The mapping defines a URL pattern to match, and the script to be executed.
+	- static file handlers:
+		- Static files are files to be served directly to the user for a given URL (e.g. images, CSS stylesheets, JavaScript source files, etc.)
+		- Static file handlers describe which files in the application directory are static files, and which URLs serve them.
+
 Requisites:
 [1]Google App Engine SDK
 
