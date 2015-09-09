@@ -32,4 +32,19 @@ Web Page(UI widget, HTML)		<------>	services	<------> Database(DB) (meta data)
 Mobile App(Android UI widget)	<------>				<------> File System(FS) (raw data)
 														<------> Suggestion Service (cron job, running machine learning algorithms)
 
+Mini-project
+
+App Engine application
+	- Python
+	- Web application framework: webapp2
+	- App Engine datastore, Python modeling API
+	- User authentication: Google Account
+	- Templating language for Python: Jinja2
+	- Upload app to App Engine
+
+Requisites:
+[1]Google App Engine SDK
+
+
+
 
