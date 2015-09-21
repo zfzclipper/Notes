@@ -78,4 +78,52 @@ Requisites:
 
 
 
+Gitflow workflow vs. Forking workflow
 
+================
+Gitflow workflow
+================
+- It assigns very specific roles to different branches and defines how and when they should interact.
+- It uses individual branches for preparing, maintaining, and recording releases. 
+- It uses two branches to record the history of the project. 
+
+master branch 
+	stores the official release history
+
+develop branch 
+	serves as an integration branch for features.
+
+feature branches
+	each new feature should reside in its own (feature)branch
+	use develop as their parent branch
+	when a feature is complete, it gets merged back into develop. 
+	features should never interact directly with master.
+
+release branch
+	a dedicated branch to prepare releases 
+	act as a buffer between feature development (develop) and public releases (master).
+	no new features can be added after this point
+	only bug fixes, documentation generation, and other release-oriented tasks should go in this branch.
+	it's possible for one team to polish the current release while another team continues working on features for the next release.
+	It also creates well-defined phases of development
+
+maintenance branch
+	used to quickly patch production releases. 
+	the only branch that should fork directly off of master.
+
+================
+Forking workflow
+================
+Instead of using a single server-side repository to act as the “central” codebase, it gives every developer a server-side repository.
+each contributor has two Git repositories: 
+[1]a private local one;
+[2]a public server-side one;
+
+Developers push to their own server-side repositories, and only the project maintainer can push to the official repository.
+
+
+a new developer fork(instead of clone) the official repository to create a copy of it on the server. 
+This new copy serves as their personal public repository
+	no other developers are allowed to push to it, but they can pull changes from it
+	After they have created their server-side copy, the developer performs a git clone to get a copy of it onto their local machine.
+forking is basically just a server-side clone
