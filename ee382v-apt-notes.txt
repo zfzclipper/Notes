@@ -1,7 +1,13 @@
 Python is good for web service development.
 Guava: Google Core Libraries for Java
 Jenkins: open-source continuous integration server built with Java, which provides plugins to support building and testing virtually any project.
-Keyboard shortcuts for gmail
+Keyboard shortcuts for gmail (needs to be turned on first)
+	- c		# compose
+	- o		# open a selected conversation
+	- u		# go back to conversation list
+	- j		# go to older conversations
+	- k		# go to newer conversations
+	- /		# search
 AUTOCONF ./config
 
 JSON file format
@@ -13,8 +19,7 @@ Node.js:
 	[1]open source, cross-platform runtime environment for server-side and networking applications written in JavaScript.
 	[2]event-driven architecture and a non-blocking I/O API that optimizes an application's throughput and scalability. 
 Postman: HTTP Request composer
-Python debugger is not suitable for server application debugging due to concurrency issues. Instead logging info should be used.
-Java: Difference between ".=" operator and "==" operator
+Pythondebugger is not suitable for server application debugging due to concurrency issues. Instead logging info should be used.
 Python: raw_input([arg]), presents a prompt to the user, gets input from the user and returns the data input by the user in a string.
 Python: xrange vs. range
 Python: s[:n] + s[n:] == s
@@ -25,12 +30,60 @@ Python: * operator on list
 Python: b = a, assign reference vs. b = a[:], assign copy
 Python dictionary key is immutable, key must implement hash function
 Python tuple is immutable, could be used as dictionary key
+	list in a tuple is still mutable: x = (1, 2, [3, 4])
 Python: single element tuple: ('a',)
+Python: list comprehension semantics: [<expr> for <var> in <list> if <expr>]
+Python: get the intersection of two lists
+	- Using filter and lambda: filter(lambda x: x in <list2>, <list1>)
+	- Using list comprehension: [x for x in list1 if x in list2]
+Python: reduce(function, sequence) ----> iteratively apply function
+		returns a single value constructed by calling the (binary) function on the first two items of the sequence, 
+		then on the result and the next item, and so on.
+Python: closure is a function object that remembers values in enclosing scopes.
+Java: Difference between ".=" operator and "==" operator
+
+
+Git: git init	# Transform the current directory into a Git repository (Create a .git sub-directory)
+Git: For virtually all Git workflows, the central repository is bare, and developers local repositories are non-bare.
+	 git init --bare <repo_name>.git	# Create a bare central repository
+	 git clone <repo_name>.git
+Github: 
+	 git init
+	 git add 
+	 git commit
+	 git remote add origin remote repository URL
+	 git remote -v
+	 git push origin master
+Git: git log --graph --oneline --decorate --date=relative --all
+Git: git diff				# displays changes in working directory (not staged changes)
+	 git diff --cached		# displays changes in stage directory/index
+Git: *git bisect
+Git: git blame
+Git: git reset vs. git checkout vs. git commit
+	 working directory ----> staged snapshot ----> commit history
+	 - git reset: This can be used to remove commits from the current branch. Throw away these commits.
+				  a simple way to undo changes that haven’t been shared with anyone else.
+				  reset a file updates the staged snapshot to match the version from the specified commit.
+	 - git checkout: Move HEAD to a different branch and update the working directory to match.
+					 useful for quickly inspecting an old version of your project. 
+					 Always create a new branch before adding commits to a detached HEAD.
+					 Checking out a file updates the working directory instead of the stage.
+	 - git revert: Undo a commit by creating a new commit.
+Git: git merge vs. git rebase
+	 - git merge:
+			- Merging is a non-destructive operation(existing branches are not changed in any way). 
+
+
 Anatomy on an app:
 Client										 Server
 Web Page(UI widget, HTML)		<------>	services	<------> Database(DB) (meta data)
 Mobile App(Android UI widget)	<------>				<------> File System(FS) (raw data)
 														<------> Suggestion Service (cron job, running machine learning algorithms)
+
+
+
+
+
 
 Mini-project
 
