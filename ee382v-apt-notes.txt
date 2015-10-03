@@ -10,6 +10,7 @@ Keyboard shortcuts for gmail (needs to be turned on first)
 	- /		# search
 AUTOCONF ./config
 
+
 JSON file format
 Protocol Buffer: a method of serializing structured data.
 What server provides: 
@@ -90,14 +91,31 @@ Git: git push <remote> --force
 Git: git cat-file -p
 Git: git commit is atomic and immutable
 
+
+Java: String Equality
+	- "==" operator: 
+		- Test primitive values for equality, or
+		- Test if two object references point to the same underlying object.
+	- .equals(object) method: 
+		- Test if the argument is equal to the object on which the method is invoked
+		  (equality is defined by the object's class semantics)
+	- For string objects:
+		- The .equals(Object) method will return true if two Strings have the same contents(i.e. the same characters in the same order).
+		- The == operator will only be true if two String references point to the same underlying String object.
+Java: String Interning
+	- When the intern() method is invoked on a String, a lookup is performed on a table of interned Strings. 
+		- If a String object with the same content is already in the table, a reference to the String in the table is returned. 
+		- Otherwise, the String is added to the table and a reference to it is returned. 
+	- After interning, all Strings with the same content will point to the same object. 
+		- saves space
+		- allows Strings to be compared using the == operator, which is much faster than comparison with the .equals(Object) method.
+
+
 Anatomy on an app:
 Client										 Server
 Web Page(UI widget, HTML)		<------>	services	<------> Database(DB) (meta data)
 Mobile App(Android UI widget)	<------>				<------> File System(FS) (raw data)
 														<------> Suggestion Service (cron job, running machine learning algorithms)
-
-
-
 
 
 
