@@ -57,9 +57,10 @@ Github:
 Git: git log --graph --oneline --decorate --date=relative --all
 Git: git diff				# displays changes in working directory (not staged changes)
 	 git diff --cached		# displays changes in stage directory/index
+Git: git show <hashcode>
 Git: *git bisect
 Git: git blame
-Git: git reset vs. git checkout vs. git commit
+Git: git reset vs. git checkout vs. git revert
 	 working directory ----> staged snapshot ----> commit history
 	 - git reset: This can be used to remove commits from the current branch. Throw away these commits.
 				  a simple way to undo changes that haven’t been shared with anyone else.
@@ -69,10 +70,25 @@ Git: git reset vs. git checkout vs. git commit
 					 Always create a new branch before adding commits to a detached HEAD.
 					 Checking out a file updates the working directory instead of the stage.
 	 - git revert: Undo a commit by creating a new commit.
-Git: git merge vs. git rebase
+Git: *git merge vs. git rebase
 	 - git merge:
 			- Merging is a non-destructive operation(existing branches are not changed in any way). 
-
+Git: git merge --no-ff <branch>
+	 Merge the specified branch into the current branch, but always generate a merge commit (even if it was a fast-forward merge).
+	 Fast forward merge: When there is a linear path from the current branch tip to the target branch, 
+						 move (i.e., "fast forward") the current branch tip up to the target branch tip, without adding a new merge commit.
+Git: *git fetch vs. git pull
+	 git pull <==> git fetch + git merge
+	 - git fetch: imports commits from a remote repository into your local repo. 
+				  The resulting commits are stored as "remote branches" instead of the normal local branches that we’ve been working with.
+				  Fetching is a safe way to review commits before integrating them with your local repository.
+	 - git pull: Merge upstream changes into your local repository.
+				 Fetch the specified remote's copy of the current branch and immediately merge it into the local copy.
+Git: git push <remote> --force
+	 Git prevents overwriting the central repository's history by refusing push requests when they result in a non-fast-forward merge.
+	 The force flage makes remote repository's branch match your local one, deleting any upstream changes that occurred since you last pulled.
+Git: git cat-file -p
+Git: git commit is atomic and immutable
 
 Anatomy on an app:
 Client										 Server
